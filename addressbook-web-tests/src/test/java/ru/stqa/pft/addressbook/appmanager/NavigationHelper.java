@@ -9,6 +9,10 @@ public class NavigationHelper extends HelperBase{
     super(wd);
   }
 
+  public void gotoHomePage() {
+    click(By.linkText("home"));
+  }
+
   public void gotoGroupPage() {
     click(By.linkText("groups"));
   }
@@ -17,7 +21,4 @@ public class NavigationHelper extends HelperBase{
     click(By.linkText("add new"));
   }
 
-  public void gotoEditContactPage() {
-    click(By.xpath("//img[@alt='Edit']"));
-  }
 }

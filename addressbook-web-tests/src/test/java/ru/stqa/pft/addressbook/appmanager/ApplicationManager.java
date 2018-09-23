@@ -42,11 +42,4 @@ public class ApplicationManager {
     return navigationHelper;
   }
 
-  public void gotoAddContactPage() {
-    navigationHelper.gotoAddContactPage();
-  }
-
-  public void gotoEditContactPage() {
-    navigationHelper.gotoEditContactPage();
-  }
 }

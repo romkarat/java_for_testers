@@ -10,10 +10,6 @@ public class ContactHelper extends HelperBase{
     super(wd);
   }
 
-  public void returnToContactPage() {
-    click(By.linkText("home"));
-  }
-
   public void submitContactCreation() {
     click(By.xpath("//div[@id='content']/form/input[21]"));
   }
