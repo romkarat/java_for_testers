@@ -1,11 +1,9 @@
 package ru.stqa.pft.addressbook.appmanager;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
-
-import static org.testng.Assert.fail;
 
 public class ApplicationManager {
 
@@ -15,8 +13,6 @@ public class ApplicationManager {
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
-  private boolean acceptNextAlert = true;
-  private StringBuffer verificationErrors = new StringBuffer();
 
   public void init() {
     wd = new FirefoxDriver();
@@ -31,44 +27,8 @@ public class ApplicationManager {
 
   public void stop() {
     wd.quit();
-    String verificationErrorString = verificationErrors.toString();
-    if (!"".equals(verificationErrorString)) {
-      fail(verificationErrorString);
-    }
   }
 
-  private boolean isElementPresent(By by) {
-    try {
-      wd.findElement(by);
-      return true;
-    } catch (NoSuchElementException e) {
-      return false;
-    }
-  }
-
-  private boolean isAlertPresent() {
-    try {
-      wd.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
-  }
-
-  private String closeAlertAndGetItsText() {
-    try {
-      Alert alert = wd.switchTo().alert();
-      String alertText = alert.getText();
-      if (acceptNextAlert) {
-        alert.accept();
-      } else {
-        alert.dismiss();
-      }
-      return alertText;
-    } finally {
-      acceptNextAlert = true;
-    }
-  }
 
   public GroupHelper getGroupHelper() {
     return groupHelper;
