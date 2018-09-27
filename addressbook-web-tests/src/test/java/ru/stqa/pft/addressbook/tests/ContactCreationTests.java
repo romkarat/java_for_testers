@@ -10,7 +10,7 @@ public class ContactCreationTests extends TestBase{
     app.getNavigationHelper().gotoAddContactPage();
     app.getContactHelper().fillContactForm(new ContactData("Иван", "Петрович", "Сидоров", "г.Москва, Ленинский проспект 12-27", "+7(495)123-45-67", "+7(925)123-45-67", "testemail@mail.ru", "test1"), true);
     app.getContactHelper().submitContactCreation();
-    app.getNavigationHelper().gotoHomePage();
+    app.getContactHelper().returnToHomePage();
   }
 
 }
