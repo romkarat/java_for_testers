@@ -50,8 +50,8 @@ public class ContactHelper extends HelperBase{
     accept();
   }
 
-  public void initContactModification() {
-    click(By.xpath("//img[@alt='Edit']"));
+  public void initContactModification(ContactData contact) {
+    click(By.cssSelector("a[href='edit.php?id=" + contact.getId() + "']"));
   }
 
   public void submitContactModification() {
@@ -66,7 +66,7 @@ public class ContactHelper extends HelperBase{
 
   public void modify(int index, ContactData contact) {
     selectContact(index);
-    initContactModification();
+    initContactModification(contact);
     fillContactForm(contact, false);
     submitContactModification();
     returnToHomePage();
