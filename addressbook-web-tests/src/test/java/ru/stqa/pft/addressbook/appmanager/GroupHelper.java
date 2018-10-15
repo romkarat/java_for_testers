@@ -88,10 +88,8 @@ public class GroupHelper extends HelperBase {
       //получаем текст из каждого элемента (имя группы)
       String name = element.getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-      //создаем объект типа GroupData
-      GroupData group = new GroupData(id, name, null, null);
-      //добавляем созданный объект в список
-      groups.add(group);
+      //создаем объект типа GroupData и добавляем его в список
+      groups.add(new GroupData().withId(id).withName(name));
     }
     //возвращаем полученный список
     return groups;
