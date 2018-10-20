@@ -37,7 +37,7 @@ public class GroupHelper extends HelperBase {
   }
 
   public void selectGroupById(int id) {
-    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+    click(By.cssSelector("input[value='" + id + "']"));
   }
 
   public void initGroupModification() {
@@ -52,6 +52,7 @@ public class GroupHelper extends HelperBase {
     initGroupCreation();
     fillGroupForm(group);
     submitGroupCreation();
+    groupCache = null;
     returnToGroupPage();
   }
 
@@ -60,12 +61,14 @@ public class GroupHelper extends HelperBase {
     initGroupModification();
     fillGroupForm(group);
     submitGroupModification();
+    groupCache = null;
     returnToGroupPage();
   }
 
   public void delete(GroupData group) {
     selectGroupById(group.getId());
     deleteSelectedGroups();
+    groupCache = null;
     returnToGroupPage();
   }
 
@@ -77,9 +80,15 @@ public class GroupHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
 
+  private Groups groupCache = null;
+
   public Groups all() {
+    //проверка на заполненность кэша: если не пустой, возвращаем копию кэша
+    if (groupCache != null) {
+      return new Groups(groupCache);
+    }
     //создаем множество элементов типа GroupData
-    Groups groups = new Groups();
+    groupCache = new Groups();
     //получаем список объектов типа WebElements
     List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
     //проходим по элементам в списке
@@ -88,9 +97,9 @@ public class GroupHelper extends HelperBase {
       String name = element.getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
       //создаем объект типа GroupData и добавляем его в список
-      groups.add(new GroupData().withId(id).withName(name));
+      groupCache.add(new GroupData().withId(id).withName(name));
     }
-    return groups;
+    return new Groups(groupCache);
   }
 
 }
