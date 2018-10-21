@@ -18,8 +18,8 @@ public class ContactDeletionTests extends TestBase{
       app.goTo().addContactPage();
       app.contact().create(new ContactData()
               .withFirstname("Иван").withMiddlename("Петрович").withLastname("Сидоров")
-              .withAddress("г.Москва, Ленинградский проспект 12-27").withPhonehome("+7(495)123-45-67")
-              .withPhonemobile("+7(925)123-45-67").withEmail("email@mail.ru").withGroup("[none]"));
+              .withAddress("г.Москва, Ленинградский проспект 12-27").withPhoneHome("+7(495)123-45-67")
+              .withPhoneMobile("+7(925)123-45-67").withEmail("email@mail.ru").withGroup("[none]"));
     }
   }
 
