@@ -17,8 +17,8 @@ public class ContactCreationTests extends TestBase{
             .withFirstname("Иван").withMiddlename("Петрович").withLastname("Сидоров").withAddress("г.Москва, Ленинский проспект 12-27")
             .withPhonehome("+7(495)123-45-67").withPhonemobile("+7(925)123-45-67").withEmail("testemail@mail.ru").withGroup("[none]");
     app.contact().create(contact);
+    assertThat(app.contact().count(), equalTo(before.size() + 1));
     Contacts after = app.contact().all();
-    assertThat(after.size(), equalTo(before.size() + 1));
     assertThat(after, equalTo(
             before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
   }
