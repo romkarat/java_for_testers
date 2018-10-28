@@ -42,9 +42,10 @@ public class ContactDataGenerator {
     Writer writer = new FileWriter(file);
 
     for (ContactData contact: contacts) {
-      writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s\n",
+      writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n",
               contact.getFirstname(), contact.getMiddlename(), contact.getLastname(), contact.getAddress(),
-              contact.getPhoneHome(), contact.getPhoneWork(), contact.getPhoneMobile(), contact.getEmail()));
+              contact.getPhoneHome(), contact.getPhoneWork(), contact.getPhoneMobile(), contact.getEmail(),
+              contact.getGroup(), contact.getPhoto()));
     }
     writer.close();
 
@@ -54,10 +55,11 @@ public class ContactDataGenerator {
     List<ContactData> contacts = new ArrayList<ContactData>();
     for (int i = 0; i < count; i++) {
       contacts.add(new ContactData()
-              .withFirstname(String.format("Firstname %s", i)).withMiddlename(String.format("Middlename %s", i))
-              .withLastname(String.format("Lastname %s", i)).withAddress(String.format("Cityname str.Lenina house %s", i))
+              .withFirstname(String.format("Firstname%s", i)).withMiddlename(String.format("Middlename%s", i))
+              .withLastname(String.format("Lastname%s", i)).withAddress(String.format("Cityname str.Lenina house %s", i))
               .withPhoneHome(String.format("+7(499)654321%s", i)).withPhoneWork(String.format("+7(495)123456%s", i))
-              .withPhoneMobile(String.format("+7(925)123456%s", i)).withEmail(String.format("testmail%s@yandex.ru", i)));
+              .withPhoneMobile(String.format("+7(925)123456%s", i)).withEmail(String.format("testmail%s@email.ru", i))
+              .withGroup("[none]").withPhoto(new File("src/test/resources/stru.png")));
     }
     return contacts;
   }
