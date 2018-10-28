@@ -1,0 +1,35 @@
+<list>
+  <contact>
+    <firstname>Firstname0</firstname>
+    <middlename>Middlename0</middlename>
+    <lastname>Lastname0</lastname>
+    <address>Cityname str.Lenina house 0</address>
+    <phonehome>+7(499)6543210</phonehome>
+    <phonemobile>+7(925)1234560</phonemobile>
+    <phonework>+7(495)1234560</phonework>
+    <email>testmail0@email.ru</email>
+    <group>[none]</group>
+  </contact>
+  <contact>
+    <firstname>Firstname1</firstname>
+    <middlename>Middlename1</middlename>
+    <lastname>Lastname1</lastname>
+    <address>Cityname str.Lenina house 1</address>
+    <phonehome>+7(499)6543211</phonehome>
+    <phonemobile>+7(925)1234561</phonemobile>
+    <phonework>+7(495)1234561</phonework>
+    <email>testmail1@email.ru</email>
+    <group>[none]</group>
+  </contact>
+  <contact>
+    <firstname>Firstname2</firstname>
+    <middlename>Middlename2</middlename>
+    <lastname>Lastname2</lastname>
+    <address>Cityname str.Lenina house 2</address>
+    <phonehome>+7(499)6543212</phonehome>
+    <phonemobile>+7(925)1234562</phonemobile>
+    <phonework>+7(495)1234562</phonework>
+    <email>testmail2@email.ru</email>
+    <group>[none]</group>
+  </contact>
+</list>
