@@ -9,27 +9,5 @@
     "phonework": "+7(495)1234560",
     "email": "testmail0@email.ru",
     "group": "[none]"
-  },
-  {
-    "firstname": "Firstname1",
-    "middlename": "Middlename1",
-    "lastname": "Lastname1",
-    "address": "Cityname str.Lenina house 1",
-    "phonehome": "+7(499)6543211",
-    "phonemobile": "+7(925)1234561",
-    "phonework": "+7(495)1234561",
-    "email": "testmail1@email.ru",
-    "group": "[none]"
-  },
-  {
-    "firstname": "Firstname2",
-    "middlename": "Middlename2",
-    "lastname": "Lastname2",
-    "address": "Cityname str.Lenina house 2",
-    "phonehome": "+7(499)6543212",
-    "phonemobile": "+7(925)1234562",
-    "phonework": "+7(495)1234562",
-    "email": "testmail2@email.ru",
-    "group": "[none]"
   }
 ]
