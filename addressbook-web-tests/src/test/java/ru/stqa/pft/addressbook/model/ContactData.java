@@ -58,10 +58,14 @@ public class ContactData {
   @Type(type = "text")
   private String email;
 
-  @Transient
+  @Expose
+  @Column(name = "email2")
+  @Type(type = "text")
   private String email2;
 
-  @Transient
+  @Expose
+  @Column(name = "email3")
+  @Type(type = "text")
   private String email3;
 
   @XStreamOmitField
@@ -222,17 +226,30 @@ public class ContactData {
 
     if (id != that.id) return false;
     if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
+    if (middlename != null ? !middlename.equals(that.middlename) : that.middlename != null) return false;
     if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
-    return address != null ? address.equals(that.address) : that.address == null;
-
+    if (address != null ? !address.equals(that.address) : that.address != null) return false;
+    if (phonehome != null ? !phonehome.equals(that.phonehome) : that.phonehome != null) return false;
+    if (phonemobile != null ? !phonemobile.equals(that.phonemobile) : that.phonemobile != null) return false;
+    if (phonework != null ? !phonework.equals(that.phonework) : that.phonework != null) return false;
+    if (email != null ? !email.equals(that.email) : that.email != null) return false;
+    if (email2 != null ? !email2.equals(that.email2) : that.email2 != null) return false;
+    return email3 != null ? email3.equals(that.email3) : that.email3 == null;
   }
 
   @Override
   public int hashCode() {
     int result = id;
     result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
+    result = 31 * result + (middlename != null ? middlename.hashCode() : 0);
     result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
     result = 31 * result + (address != null ? address.hashCode() : 0);
+    result = 31 * result + (phonehome != null ? phonehome.hashCode() : 0);
+    result = 31 * result + (phonemobile != null ? phonemobile.hashCode() : 0);
+    result = 31 * result + (phonework != null ? phonework.hashCode() : 0);
+    result = 31 * result + (email != null ? email.hashCode() : 0);
+    result = 31 * result + (email2 != null ? email2.hashCode() : 0);
+    result = 31 * result + (email3 != null ? email3.hashCode() : 0);
     return result;
   }
 
@@ -241,8 +258,15 @@ public class ContactData {
     return "ContactData{" +
             "id=" + id +
             ", firstname='" + firstname + '\'' +
+            ", middlename='" + middlename + '\'' +
             ", lastname='" + lastname + '\'' +
             ", address='" + address + '\'' +
+            ", phonehome='" + phonehome + '\'' +
+            ", phonemobile='" + phonemobile + '\'' +
+            ", phonework='" + phonework + '\'' +
+            ", email='" + email + '\'' +
+            ", email2='" + email2 + '\'' +
+            ", email3='" + email3 + '\'' +
             '}';
   }
 

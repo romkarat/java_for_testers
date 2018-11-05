@@ -15,13 +15,13 @@ public class ContactPhoneTests extends TestBase{
   @BeforeMethod
   public void ensurePreconditions() {
     app.goTo().homePage();
-    if (app.contact().all().size() == 0){
+    if (app.db().contacts().size() == 0){
       app.goTo().addContactPage();
       app.contact().create(new ContactData()
               .withFirstname("Иван").withMiddlename("Петрович").withLastname("Сидоров")
-              //.withAddress("г.Москва, Ленинградский проспект 12-27")
+              .withAddress("г.Москва, Ленинградский проспект 12-27")
               .withPhoneHome("+7(495)123-45-67").withPhoneMobile("+7 (925) 123 45 67").withPhoneWork("9250001234")
-              .withEmail("email@mail.ru").withGroup("[none]"));
+              .withEmail("email@mail.ru").withEmail2("email2@mail.ru").withEmail3("email3@mail.ru").withGroup("[none]"));
     }
   }
 
